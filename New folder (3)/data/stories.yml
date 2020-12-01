@@ -1,0 +1,29 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: action_weather
+  - intent: greet
+  - action: action_weather
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+    entities:
+    - location: shailesh
+  - slot_was_set:
+    - location: shailesh
+  - action: action_weather
+  - slot_was_set:
+    - location: shailesh
+  - intent: nlu_fallback
+    entities:
+    - location: shailesh
+  - slot_was_set:
+    - location: shailesh
+  - action: action_weather
+  - slot_was_set:
+    - location: shailesh

@@ -1,0 +1,13 @@
+version: "2.0"
+
+rules:
+
+- rule: for any input bot should run action_weather
+  steps:
+  - intent: greet
+  - action: action_weather
+
+- rule: for any input bot should run action_weather
+  steps:
+  - intent: nlu_fallback
+  - action: action_weather
